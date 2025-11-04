@@ -1,6 +1,6 @@
 # Comparação de Desempenho entre Threads **N:M** e **1:1** (Java)
 
-### Nome: Davi Henrique Moreira
+##### Nome: Davi Henrique Moreira
 
 ## O que foi medido:
 Eu fiz duas versões da mesma tarefa:
