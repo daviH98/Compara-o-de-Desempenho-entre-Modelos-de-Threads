@@ -1,5 +1,7 @@
 # Comparação de Desempenho entre Threads **N:M** e **1:1** (Java)
 
+### Nome: Davi Henrique Moreira
+
 ## O que foi medido:
 Eu fiz duas versões da mesma tarefa:
 - **N:M**: várias tarefas (threads de usuário) rodando em um **pool fixo** de M threads reais do SO (`ExecutorService` com `newFixedThreadPool(M)`).
