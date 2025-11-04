@@ -5,7 +5,7 @@ Eu fiz duas versões da mesma tarefa:
 - **N:M**: várias tarefas (threads de usuário) rodando em um **pool fixo** de M threads reais do SO (`ExecutorService` com `newFixedThreadPool(M)`).
 - **1:1**: crio **uma `Thread` real por tarefa** e mando bala com `start()` e depois `join()`.
 
-A tarefa em si é bem : um loop com contas rápidas (pra ter um pouco de CPU) e um `Thread.sleep(2)` ms (pra simular I/O). Assim os dois modelos pegam um pouco de cada coisa, não fica 100% CPU nem 100% I/O.
+A tarefa: um loop com contas rápidas (pra ter um pouco de CPU) e um `Thread.sleep(2)` ms (pra simular I/O). Assim os dois modelos pegam um pouco de cada coisa, não fica 100% CPU nem 100% I/O.
 
 ## Rodei:
 ```bash
@@ -39,7 +39,7 @@ O gráfico tá aqui: ![Gráfico](./comparacao_nm_11.png)
 ![Comparação N:M vs 1:1](./comparacao_nm_11.png)
 
 ## Interpretação rápida do que vi (sem floreio)
-- **Até N pequeno/médio (10 ~ 100)**: o **1:1** foi um tiquinho **melhor**. Cria as threads, todo mundo dorme 2 ms, fim. Overhead ainda é baixo.
+- **Até N pequeno/médio (10 ~ 100)**: o **1:1** foi um pouco **melhor**. Cria as threads, todo mundo dorme 2 ms, fim. Overhead ainda é baixo.
 - **Quando o N cresce (500, 1000)**: o **1:1** sofre **bem mais** (muitas threads reais = agendamento/stack/context switch, etc.).  
   O **N:M** fica mais **estável**, porque limita M (tipo 8) e vai **multiplexando** as tarefas.
 - **Sleep ajuda o N:M** quando o pool tem tamanho próximo dos núcleos — enquanto algumas tarefas estão dormindo, outras ocupam CPU.
