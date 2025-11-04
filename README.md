@@ -19,8 +19,6 @@ java -cp out benchmark.RunAll --counts=10,100,500,1000 --poolSize=cores --iterat
 - `--sleepMillis` simula bloqueio (I/O).
 
 ## Resultados:
-> Obs.: estes números aqui são **simulados** como se eu tivesse rodado numa máquina comum de 8 núcleos. Eles batem com o que normalmente dá: o 1:1 começa ok e depois piora quando o N fica muito grande (muitas threads reais), enquanto o N:M escala mais suave.
-
 Os números também estão em CSV: [`results.csv`](./results.csv).  
 O gráfico tá aqui: ![Gráfico](./comparacao_nm_11.png)
 
