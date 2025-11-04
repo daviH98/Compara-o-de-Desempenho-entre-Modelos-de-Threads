@@ -7,9 +7,7 @@ Eu fiz duas versões da mesma tarefa:
 
 A tarefa em si é bem : um loop com contas rápidas (pra ter um pouco de CPU) e um `Thread.sleep(2)` ms (pra simular I/O). Assim os dois modelos pegam um pouco de cada coisa, não fica 100% CPU nem 100% I/O.
 
-## Como rodei (o básico)
-Sem frescura, dá pra compilar com `javac` mesmo:
-
+## Rodei:
 ```bash
 javac -d out $(find src/main/java -name "*.java")
 java -cp out benchmark.RunAll --counts=10,100,500,1000 --poolSize=cores --iterations=20000 --sleepMillis=2
